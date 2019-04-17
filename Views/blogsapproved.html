@@ -1,0 +1,28 @@
+<!-- Icon  -->
+    <link rel="icon" href="resources/images/icon.jpg">
+<style>
+body {
+	  background-image: url("resources/images/2.jpg");
+	  background-size:1500px 750px;
+	  background-repeat:no-repeat;
+	}
+</style>
+<b ng-show="user==undefined">Please Login</b>
+<div ng-show="user!=undefined">
+<div class="panel panel-info">
+<div class="panel-heading">
+<b>List Of Blogs Approved</b>
+</div>
+<div class="panel-body">
+<b ng-show="blogsApproved.length==0">No approved blogs</b>
+<ul style="list-style:none">
+<li ng-repeat="blogPost in blogsApproved">
+<a href="#/getblogsapproved/{{blogPost.blogPostId}}">
+Blog Title  :{{blogPost.blogTitle}}</a><br>
+PostedOn    :{{blogPost.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}<br>
+Author      :{{blogPost.author.email}}<br>
+&nbsp;
+</ul>
+</div>
+</div>
+</div>
